@@ -198,6 +198,10 @@ input[type="number"]
     scrollbar-width: none;
 }
 
+#main-container::-webkit-scrollbar{
+    display:none;
+}
+
 table{
 	background-color: white;
 	text-align: left;
