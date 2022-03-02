@@ -111,7 +111,27 @@ function buscarProducto() {
     mostrarProductosEnDom(productosFiltrados)
     if (productos.length === 0) {
         sinProductos();
+    }else if (productosFiltrados.length === 0) {
+        const mensajeVacio = $(".mensaje-vacio");
+        mensajeVacio.append(`
+        <div class="tarjetas row m-auto mx-auto px-3 py-3">
+            <div class="col-sm-12 mt-3 posteos">
+                <div class="card">
+                    <div class="card-header">Ningun producto condice con la busqueda solicitada</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Para agregar o exportar productos presione dichas opciones en el menu</h5>
+                        <h1><span class="ion ion-md-funnel"></span></h1>
+                        <p class="card-text">Para ver nuevamente todos los productos cargados haga click <a style="cursor: pointer; color: blue"onclick="borrarBusqueda()"><u>aqui</u></a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>`);
     }
+}
+
+function borrarBusqueda() {
+    $("#busqueda").val("");
+    $("#btnBuscar").click();
 }
 
 // editar producto 
