@@ -1,0 +1,335 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+body {
+    background: #e2094e ;
+    background: linear-gradient(351deg,#e2094e 0%, #169a87 80%);
+    background: -webkit-linear-gradient(351deg,#e2094e 0%, #169a87 80%);
+    background: -moz-linear-gradient(351deg,#e2094e 0%, #169a87 80%);
+    margin-bottom: 30px;
+}
+
+main {
+    margin-bottom: 80px;
+    margin-top: 100px;
+}
+
+/* header */
+header {
+    padding: 10px 0;
+    text-align: center;
+    background-color: #ffffff; 
+    position: absolute;
+    width: 100%;
+    border-bottom: solid 2px #e2094e;
+}
+
+/* Footer */
+.footer {
+    background: black;
+}
+
+footer {
+    padding: 20px 0;
+    text-align: center;
+    color: #ffffff; 
+    position: absolute;
+    width: 100%;
+}
+
+footer a {
+    color: #ffffff; }
+
+footer a:hover {
+    color: #ffffff; }
+
+footer .list-inline .list-inline-item {
+    padding: 10px 15px; }   
+
+/* formulario */
+h1 {
+    text-align: center;
+    font-weight: 700;
+}
+
+form {
+    background:#fff;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 40px;
+    box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+
+}
+
+.form {
+    width: 100%;
+    margin: 50px 15px 15px 15px;
+}
+
+form .grupo {
+    position: relative;
+    margin: 15px;
+    translate: -30px;
+}
+
+.input-alta {
+    background: none;
+    color: #169a87;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border:none;
+    border-bottom: 1px solid rgb(149, 143, 143);
+
+}
+
+select {
+    background: none;
+    color: #c6c6c6;
+    font-size: 18px;
+    padding: 10px 10px 13px 5px;
+    display: block;
+    width: 100%;
+    border:none;
+    border-bottom: 1px solid rgb(149, 143, 143);
+    
+}
+
+.input-alta:focus {
+    outline: none;
+    color: rgb(149, 143, 143);
+
+}
+
+.input-alta:focus~.label-alta,
+.input-alta:valid~.label-alta {
+    top: -14px;
+    font-size: 12px;
+    color: #2196f3;
+}
+
+select:focus {
+    outline: none;
+    color: rgb(149, 143, 143);
+
+}
+
+select:focus~.label-alta,
+select:valid~.label-alta {
+    top: -14px;
+    font-size: 12px;
+    color: #2196f3;
+}
+
+.label-alta {
+    font-size: 16px;
+    color: rgb(149, 143, 143);
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    top: 5px;
+    transition: 0.5s ease-in-out all;
+    pointer-events: none;
+}
+
+.barra {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.barra::before{
+    content: "";
+    height: 2px;
+    width:0%;
+    bottom: 0;
+    position: absolute;
+    background: linear-gradient(to left, rgb(226, 9, 78), rgb(22, 154, 135));
+    transition: 0.3s ease width;
+    left: 0;
+}
+
+input:focus~.barra::before{
+    width: 100%;
+
+}
+
+#btnAgregar, #btnModificar{
+    background: -webkit-linear-gradient(to rigth, #169a87, #e2094e); 
+    background: linear-gradient(to right, #169a87, #e2094e);
+    border: none;
+    display: block;
+    width: 80%;
+    margin:10px auto;
+    color: white;
+    height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+
+input[type="number"]
+{
+    -webkit-appearance: textfield !important;
+    margin: 0;
+    -moz-appearance:textfield !important;
+}
+
+/*tabla productos */
+.productos {
+    display:none;
+}
+
+#main-container{
+    overflow:scroll;
+	margin-bottom: 100px;
+	width: 100%;
+    scrollbar-width: none;
+}
+
+table{
+	background-color: white;
+	text-align: left;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td{
+	padding: 20px;
+}
+
+.pright {
+    text-align: right;
+}
+
+.pleft {
+    text-align:left;
+}
+
+.pcenter {
+    text-align: center;
+}
+
+thead{
+	background-color: #246355;
+	border-bottom: solid 5px #0F362D;
+	color: white;
+}
+
+tr:nth-child(even){
+	background-color: #ddd;
+}
+
+tr:hover td{
+	background-color: #369681;
+	color: white;
+}
+
+tr:hover td i{
+	background-color: #369681;
+	color: white;
+}
+
+/* Botones */
+.btnDelete{
+    border: none;
+    background: transparent;
+    color: #8b9093 ;
+    cursor: pointer;
+    font-size: 26px;
+}
+
+.btnDelete i:hover {
+    color: #8b1616 !important; }
+
+.btnEdit{
+    border: none;
+    background: transparent;
+    color: #8b9093 ;
+    cursor: pointer;
+    font-size: 26px;
+}
+
+.btnEdit i:hover {
+    color: #000000 !important; }
+
+.busqueda {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#busqueda {
+    width: 100%;
+    height: 100%;
+}
+
+#btnBuscar {
+    border:none;
+    width:100%;
+    background: linear-gradient(to left, #246355, #e2094e);
+}
+
+#opciones {
+    border: none;
+    background: linear-gradient(to right, #246355, #e2094e);
+    color: white ;
+    cursor: pointer;
+    font-size: 26px;
+    width: 100%;
+}
+
+.option-align {
+    text-align-last: center;
+}
+
+.btnAgregar, .btnModificar {
+    margin-top: 50px;
+}
+
+/* Dropdown*/
+.dropdown-menu  {
+    min-width: 12rem!important;
+}
+
+li {
+    text-align: center;
+}
+
+#busqueda::placeholder {
+    text-align:center;
+}
+
+.acciones {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Mensaje vacio*/
+.tarjetas {
+    text-align: center;
+}
+
+.card {
+    background-color: #E1E1E1;
+    color: #454545;
+}
+
+/* Media querys */
+@media (min-width: 1px) and (max-width: 991px) {
+    #btnBuscar {
+        border:none;
+        width:100%;
+        background: linear-gradient(to right, #246355, #e2094e);
+    } 
+}

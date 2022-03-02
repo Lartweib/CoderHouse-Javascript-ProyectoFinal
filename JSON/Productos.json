@@ -1,0 +1,87 @@
+{
+    "productos":[{
+            "nombre" : "NOTEBOOK LENOVO", 
+            "costo" : 120000,
+            "iva" : "10.5%",
+            "rentabilidad" : 45,
+            "rentabilidadConvertida" : 1.45,
+            "ivaConvertido" : 1.105,
+            "importeNeto" : 132600,
+            "importeFinal" : 192270,
+            "costoFormateado" : "120,000.00",
+            "importeFinalFormateado": "192,270.00"
+        },
+        {
+            "nombre" : "NOTEBOOK ASUS", 
+            "costo" : 90000,
+            "iva" : "10.5%",
+            "rentabilidad" : 40,
+            "rentabilidadConvertida" : 1.4,
+            "ivaConvertido" : 1.105,
+            "importeNeto" : 99450,
+            "importeFinal" : 139230,       
+            "costoFormateado" : "90,000.00",
+            "importeFinalFormateado": "139,230.00"
+        },
+        {
+            "nombre" : "NOTEBOOK DELL", 
+            "costo" : 105000,
+            "iva" : "10.5%",
+            "rentabilidad" : 50,
+            "rentabilidadConvertida" : 1.5,
+            "ivaConvertido" : 1.105,
+            "importeNeto" : 116025,
+            "importeFinal" : 174037.5,       
+            "costoFormateado" : "105,000.00",
+            "importeFinalFormateado": "174,037.50"
+        },
+        {
+            "nombre" : "NOTEBOOK HP", 
+            "costo" : 76800,
+            "iva" : "10.5%",
+            "rentabilidad" : 60,
+            "rentabilidadConvertida" : 1.6,
+            "ivaConvertido" : 1.105,
+            "importeNeto" : 84864,
+            "importeFinal" : 135782.4,       
+            "costoFormateado" : "76,800.00",
+            "importeFinalFormateado": "135,782.40"
+        },
+        {
+            "nombre" : "PLACA DE VIDEO 3060", 
+            "costo" : 180000,
+            "iva" : "10.5%",
+            "rentabilidad" : 35,
+            "rentabilidadConvertida" : 1.35,
+            "ivaConvertido" : 1.105,
+            "importeNeto" : 198900,
+            "importeFinal" : 268515,       
+            "costoFormateado" : "180,000.00",
+            "importeFinalFormateado": "268,515.00"
+        },
+        {
+            "nombre" : "PLACA DE VIDEO 3090", 
+            "costo" : 250000,
+            "iva" : "10.5%",
+            "rentabilidad" : 30,
+            "rentabilidadConvertida" : 1.3,
+            "ivaConvertido" : 1.105,
+            "importeNeto" : 276250,
+            "importeFinal" : 359125,       
+            "costoFormateado" : "250,000.00",
+            "importeFinalFormateado": "359,125.00"
+        },
+        {
+            "nombre" : "FUENTE GIGABYTE ORO 800W", 
+            "costo" : 15000,
+            "iva" : "21.0%",
+            "rentabilidad" : 55,
+            "rentabilidadConvertida" : 1.55,
+            "ivaConvertido" : 1.21,
+            "importeNeto" : 18150,
+            "importeFinal" : 28132.5,       
+            "costoFormateado" : "15,000.00",
+            "importeFinalFormateado": "28,132.50"
+        }
+    ]
+}

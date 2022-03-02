@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="author" content="Federico Ara">
+        <meta name="description" content="Simulador de sistema de gestion">
+        <meta name="keywords" content="sistema, gestion, simulador, inventario, productos">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" href="img/logo2.png" />
+        <title>Gestionate</title>
+    </head>
+    <body>
+        <header class="header fixed-top">
+            <div class="container">
+                <img src="img/logo.png" alt="" width="150" height="auto" class="img-fluid">
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                <div class="row acciones">
+                    <div class="col-md-12 col-lg-7" style="margin-bottom: 10px;">
+                        <input class="input-busqueda" type="text" name= "" id="busqueda" placeholder="Ingrese el nombre de un producto">
+                    </div>
+                    <div class="btn-group col-md-12 col-lg-3" style="margin-bottom: 10px;">
+                        <button type="button" class="btn btn-success" id="btnBuscar" title="Buscar entre los productos los que coincidan con la busqueda ingresada" onclick="buscarProducto()">Buscar</button>
+                    </div>
+                    <div class="col-md-12 ms-auto col-lg-2 dropdown" style="margin-bottom: 10px;">
+                        <button class="btn btn-white btn-actions" id="opciones" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" title="Mas opciones">
+                            <span class="ion ion-md-funnel"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+                            <li><button type="button" class="btn btn-white mr10" title="Crea un producto nuevo" data-bs-toggle="modal" data-bs-target="#altaProductos" data-dismiss="modal"><i class="ion ion-md-add-circle-outline"></i> Nuevo Producto</button></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><button type="button" class="btn btn-white" id="btnExportar" title="Exportar productos guardados localmente en archivo JSON"><i class="ion ion-md-download"></i> Exportar</button></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><button type="button" class="btn btn-white" id="btnGuardar" title="Guardar la lista de productos en el Local Storage" ><i class="ion ion-md-save"></i> Guardar en local</button></li>
+                            <li><button type="button" class="btn btn-white" id="btnBorrarLocal" title="Borrar la lista de productos almacenada en el Local Storage"  onclick="borrarLocalStorage();"><i class="ion ion-md-trash"></i> Borrar localstorage</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+<!--modal de alta de productos -->
+            <div class="container">
+                <div class="modal fade" id="altaProductos">
+                    <div class="modal-dialog modal-md modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <form id="formul" method="post" action="">
+                                        <div class="row"></div>
+                                            <h1 class="tituloModal">Alta de productos</h1>
+                                        <div class="row form">
+                                            <div class="col-lg-12 col-md-12 grupo">
+                                                <input class="input-alta" type="text" name= "" id="nombre" required><span class="barra"></span>
+                                                <label class="label-alta" for="">Nombre</label>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 grupo">
+                                                <input class="input-alta" type="number" name= "" id="costo" required><span class="barra"></span>
+                                                <label class="label-alta" for="">Costo</label>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 grupo">
+                                                <input class="input-alta" type="number" name= "" id="rentabilidad" required><span class="barra"></span>
+                                                <label class="label-alta" for="">Rentabilidad</label>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 grupo">
+                                                <select class="input-alta" id="iva"><span class="barra"></span>
+                                                    <option selected disabled value="-">-</option>
+                                                    <option value="21.0%" title="21,0">21.0%</option>
+                                                    <option value="10.5%" title="10,5">10.5%</option>
+                                                </select>
+                                                <label class="label-alta" for="">Iva</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-gl-12 btnPrincipal"><button type="button" id="btnAgregar" class=""> <span>Agregar</span></button></div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!-- mostrar datos  -->
+            <div class="container tabla" id="main-container">
+                <table id="tabla">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th><th>Moneda</th><th class="pright">Costo</th><th class="pright">Iva</th><th class="pright">Rentabilidad</th><th class="pright">Importe Final</th><th class="pcenter">Accion</th>
+                        </tr>
+                    </thead>
+                </table>
+                <div class="mensaje-vacio">
+                    
+                </div>
+            </div>
+        </main>
+        <footer class="footer fixed-bottom">
+            <div class="container">
+                <small>©2022 Todos los derechos reservados. Creado por <a href="https://www.linkedin.com/in/federico-daniel-ara/" class="font-weight-bold" target="_blank"
+                        rel="noopener">Federico Ara</a></small>
+            </div>
+        </footer>
+<!-- Scripts -->
+        
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src='js/main.js'></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+    </body>
+</html>
